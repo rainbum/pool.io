@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbum Liquidation &amp; Bin Store - Discount Store</title>
+    <style>
+        :root {
+            --primary-color: #f1c40f; /* Yellow from logo */
+            --secondary-color: #000000; /* Black from logo */
+            --accent-color: #e74c3c;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --text-color: #333333;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--secondary-color);
+            box-shadow: var(--box-shadow);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            top: 0;
+            color: white;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 0.5rem 0;
+        }
+        
+        .logo {
+            max-height: 80px;
+        }
+        
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: var(--primary-color);
+            padding: 0.5rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: var(--secondary-color);
+            font-weight: 600;
+            padding: 0.5rem;
+            border-bottom: 2px solid transparent;
+        }
+        
+        nav ul li a:hover, 
+        nav ul li a.active {
+            color: var(--dark-color);
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/600') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 180px 0 80px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+        
+        .btn:hover {
+            background-color: #e6b800;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #333333;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+            background-color: #fff;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--secondary-color);
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            right: 25%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        /* Products Preview */
+        .products-preview {
+            padding: 4rem 0;
+            background-color: var(--light-color);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border: 1px solid #ddd;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+        
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+        
+        .product-info .price {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+        }
+        
+        .discount-price {
+            color: var(--accent-color);
+        }
+        
+        .product-info .btn {
+            width: 100%;
+            text-align: center;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 4rem 0;
+            background-color: #fff;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+        
+        /* UHaul Section */
+        .uhaul-section {
+            padding: 3rem 0;
+            background-color: var(--primary-color);
+            text-align: center;
+        }
+        
+        .uhaul-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .uhaul-content h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .uhaul-content p {
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .uhaul-content .btn {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+        
+        .uhaul-content .btn:hover {
+            background-color: #333333;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 4rem 0;
+            background-color: var(--light-color);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-icon {
+            margin-right: 1rem;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .contact-map {
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .contact-map img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .contact-form form {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links li a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Styles */
+        @media screen and (max-width: 991px) {
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .header-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="./Rainbum Liquidation &amp; Bin Store - Discount Store_files/IMG_9983 2.PNG" alt="Rainbum Liquidation &amp; Bin Store Logo" class="logo">
+        </div>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#" class="active">Home</a></li>
+                    <li><a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#products">Products</a></li>
+                    <li><a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#about">About Us</a></li>
+                    <li><a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#uhaul">U-Haul Rentals</a></li>
+                    <li><a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#contact">Contact Us</a></li>
+                </ul>
+                <div class="mobile-menu">☰</div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Best Deals &amp; Biggest Discounts</h1>
+            <p>At Rainbum Liquidation &amp; Bin Store, we offer a wide variety of products at discounted prices to suit all your needs. Shop now and take advantage of our exclusive offers!</p>
+            <div>
+                <a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#products" class="btn">Shop Now</a>
+                <a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Us?</h2>
+                <p>We provide a unique shopping experience</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Competitive Prices</h3>
+                    <p>We offer the best prices in the market with guaranteed high quality for all our products.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Continuous Inventory Updates</h3>
+                    <p>We regularly update our inventory to provide you with the latest products and best deals.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Fast Delivery</h3>
+                    <p>We provide fast and secure delivery service to all areas with order tracking capability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Preview -->
+    <section class="products-preview" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Products</h2>
+                <p>Browse a variety of products at the best prices</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="file:///api/placeholder/400/300" alt="Product">
+                    </div>
+                    <div class="product-info">
+                        <h3>Samsung 55" Smart TV</h3>
+                        <div class="price">
+                            <span class="original-price">$899</span>
+                            <span class="discount-price">$699</span>
+                        </div>
+                        <a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="file:///api/placeholder/400/300" alt="Product">
+                    </div>
+                    <div class="product-info">
+                        <h3>LG Refrigerator</h3>
+                        <div class="price">
+                            <span class="original-price">$1299</span>
+                            <span class="discount-price">$999</span>
+                        </div>
+                        <a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="file:///api/placeholder/400/300" alt="Product">
+                    </div>
+                    <div class="product-info">
+                        <h3>Split Air Conditioner</h3>
+                        <div class="price">
+                            <span class="original-price">$749</span>
+                            <span class="discount-price">$599</span>
+                        </div>
+                        <a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="file:///api/placeholder/400/300" alt="Product">
+                    </div>
+                    <div class="product-info">
+                        <h3>Automatic Washing Machine</h3>
+                        <div class="price">
+                            <span class="original-price">$849</span>
+                            <span class="discount-price">$699</span>
+                        </div>
+                        <a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#" class="btn">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Us</h2>
+                    <p>Rainbum Liquidation &amp; Bin Store was established in 2015 with the goal of providing high-quality products at discounted prices. We work with major manufacturers and distributors to provide the best deals for our customers.</p>
+                    <p>We pride ourselves in providing excellent customer service and constantly strive to improve the shopping experience. We have a team of specialized experts who can provide advice and guidance to help you choose the right products for your needs.</p>
+                    <p>Our vision is to be the first destination for discounted shopping while maintaining the highest standards of quality and service.</p>
+                </div>
+                <div class="about-image">
+                    <img src="file:///api/placeholder/600/400" alt="Store Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UHaul Section -->
+    <section class="uhaul-section" id="uhaul">
+        <div class="container">
+            <div class="uhaul-content">
+                <h2>Authorized U-Haul Rental Agents</h2>
+                <p>We are authorized agents for U-Haul truck rentals. We provide a variety of vehicles to meet your transportation and moving needs. Whether you're moving to a new home or need to transport goods, we have the right solution for you at competitive prices.</p>
+                <a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#contact" class="btn">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>We're here to help and answer any questions you may have</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4>Address</h4>
+                                <p>Riyadh Street, Al-Nakheel District, Saudi Arabia</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+966 12 345 6789</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@rainbum-liquidation.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-map">
+                        <img src="file:///api/placeholder/600/300" alt="Map">
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required=""></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Rainbum Liquidation &amp; Bin Store</h3>
+                    <p>A store specializing in liquidation and discounted products. We offer the best deals with quality guarantee.</p>
+                    <div class="social-icons">
+                        <a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#" class="social-icon">F</a>
+                        <a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#" class="social-icon">T</a>
+                        <a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#" class="social-icon">I</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#">Home</a></li>
+                        <li><a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#products">Products</a></li>
+                        <li><a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#about">About Us</a></li>
+                        <li><a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#uhaul">U-Haul Rentals</a></li>
+                        <li><a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Product Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#">Home Appliances</a></li>
+                        <li><a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#">Electronics</a></li>
+                        <li><a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#">Furniture</a></li>
+                        <li><a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#">Household Items</a></li>
+                        <li><a href="file:///Users/jamalshaaban/Downloads/rainbum-liquidation-website-english.html#">Personal Care Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Business Hours</h3>
+                    <ul class="footer-links">
+                        <li>Saturday - Thursday: 9:00 AM - 10:00 PM</li>
+                        <li>Friday: 2:00 PM - 10:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Rainbum Liquidation &amp; Bin Store. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const nav = document.querySelector('nav ul');
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+                nav.style.flexDirection = 'column';
+                nav.style.position = 'absolute';
+                nav.style.top = '100%';
+                nav.style.left = '0';
+                nav.style.width = '100%';
+                nav.style.backgroundColor = 'var(--primary-color)';
+                nav.style.padding = '1rem';
+                nav.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
+                nav.style.zIndex = '100';
+            }
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 120,
+                        behavior: 'smooth'
+                    });
+                }
+                
+                // Close mobile menu if open
+                const nav = document.querySelector('nav ul');
+                if (window.innerWidth <= 768 && nav.style.display === 'flex') {
+                    nav.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+
+</body></html>
